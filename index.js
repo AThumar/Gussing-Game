@@ -1,5 +1,5 @@
 let Guess = parseInt(prompt("Enter a number"));
-
+let attempt = 0;
 
 let random = Math.floor(Math.random() * 5);
 
@@ -8,17 +8,8 @@ while (!Guess) {
 }
 
 while (Guess !== random) {
-
-    if (Guess > random) {
-        Guess = parseInt(prompt('Guess is HIGHER , Please enter another number'));
-
-    }
-    else {
-        Guess = parseInt(prompt('Guess is LOWER , Please enter another number'));
-    }
-
-
-
-
+    attempt++;
+    if (Guess > random) { Guess = parseInt(prompt('Guess is HIGHER , Please enter another number')); }
+    else { Guess = parseInt(prompt('Guess is LOWER , Please enter another number')); }
 }
-console.log("YOU GOT IT");
+console.log(`You got it in ${attempt}`);
